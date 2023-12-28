@@ -1,0 +1,36 @@
+{
+  "name": "berti.sh",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "Fernando Berti <me@berti.sh>",
+  "description": "Berti's thoughts on tech",
+  "type": "module",
+  "main": "index.ts",
+  "types": "index.ts",
+  "scripts": {
+    "dev": "WATCH=true tsx watch main.ts",
+    "lint": "eslint . --ext ts,tsx --cache",
+    "format": "prettier --write .",
+    "release": "release-it",
+    "prepare": "husky install",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "tech",
+    "code",
+    "software",
+    "personal",
+    "ideas",
+    "thoughts",
+    "blog"
+  ],
+  "dependencies": {
+    "@tailwindcss/typography": "^0.5.10",
+    "carbon": "github:carbonyde/carbon",
+    "dayjs": "^1.11.10",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "hydrogen": "github:carbonyde/hydrogen#1.1.0"
+  }
+}
