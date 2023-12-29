@@ -12,12 +12,17 @@ interface Properties {
 export function Html({ children, title, description, keywords }: Properties) {
   return (
     <Base
-      lang="en"
+      lang="es"
       class="dark"
-      color="#000000"
-      title={title}
-      description={description}
-      keywords={keywords}
+      color="#09090b"
+      title={title ? `${title} | Fernando Berti` : "Fernando Berti"}
+      description={
+        description ?? "Comparto mis ideas sobre programación y tecnología"
+      }
+      keywords={
+        keywords ??
+        "codigo,software,programacion,ingenieria,html,css,typescript,node,esm,js,javascript"
+      }
       url="https://berti.sh"
     >
       {children}
