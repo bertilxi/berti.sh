@@ -1,5 +1,6 @@
 import { readdir } from "node:fs/promises";
 import path from "node:path";
+import { Footer } from "~/components/footer.tsx";
 import { Html } from "~/components/html.tsx";
 import { Navbar } from "~/components/navbar.tsx";
 import dayjs from "dayjs";
@@ -63,6 +64,8 @@ export default function BlogPage() {
             );
           })}
       </main>
+
+      <Footer />
     </Html>
   );
 }

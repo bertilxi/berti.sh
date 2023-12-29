@@ -25,10 +25,11 @@
     "blog"
   ],
   "dependencies": {
+    "@axiomhq/pino": "^1.0.0-rc.1",
     "@tailwindcss/typography": "^0.5.10",
     "carbon": "github:carbonyde/carbon",
     "dayjs": "^1.11.10",
-    "tailwindcss-animate": "^1.0.7",
-    "hydrogen": "github:carbonyde/hydrogen#1.1.0"
+    "hydrogen": "github:carbonyde/hydrogen#1.1.0",
+    "tailwindcss-animate": "^1.0.7"
   }
 }
