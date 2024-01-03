@@ -24,6 +24,7 @@ export function Html({ children, title, description, keywords }: Properties) {
         "codigo,software,programacion,ingenieria,html,css,typescript,node,esm,js,javascript"
       }
       url="https://berti.sh"
+      image="/static/og.jpg"
     >
       {children}
     </Base>
