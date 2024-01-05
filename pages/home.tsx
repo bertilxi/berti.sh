@@ -25,7 +25,7 @@ export default function HomePage() {
         </div>
 
         <div>
-          Soy curioso, me gusta explorar, aprender y poner al limite las nuevas
+          Soy curioso, me gusta explorar, aprender y poner al límite las nuevas
           tecnologías.
         </div>
 

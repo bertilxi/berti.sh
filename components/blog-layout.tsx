@@ -32,7 +32,7 @@ export async function BlogLayout({
 
       <main class="container prose prose-zinc max-w-[800px] py-6 dark:prose-invert">
         {children}
-        <div class="flex gap-2 pt-6">
+        <div class="flex flex-wrap gap-2 pt-6 md:flex-nowrap">
           {post?.prev && (
             <a
               href={path.join(
@@ -40,7 +40,7 @@ export async function BlogLayout({
                 post.prev.path,
                 post.prev.name.split(".")[0],
               )}
-              class="flex w-1/2 flex-col rounded-xl border p-3 no-underline hover:border-rose-500"
+              class="flex w-full flex-col rounded-xl border p-3 no-underline hover:border-rose-500 md:w-1/2"
             >
               <span class="text-sm">Articulo Anterior</span>
               <span class="font-bold text-rose-600 dark:text-rose-400">
@@ -56,7 +56,7 @@ export async function BlogLayout({
                 post.next.path,
                 post.next.name.split(".")[0],
               )}
-              class="flex w-1/2 flex-col rounded-xl border p-3 text-right no-underline hover:border-rose-500"
+              class="flex w-full flex-col rounded-xl border p-3 text-right no-underline hover:border-rose-500 md:w-1/2"
             >
               <span class="text-sm">Siguiente articulo</span>
               <span class="font-bold text-rose-600 dark:text-rose-400">

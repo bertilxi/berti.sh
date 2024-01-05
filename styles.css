@@ -143,6 +143,9 @@ figcaption + pre {
 
 a {
   @apply cursor-pointer font-bold !no-underline transition-all hover:text-rose-600 dark:hover:text-rose-400;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 .prose > h1 > a:before,

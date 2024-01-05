@@ -29,6 +29,7 @@
     "@tailwindcss/typography": "^0.5.10",
     "carbon": "github:carbonyde/carbon",
     "dayjs": "^1.11.10",
+    "diamond": "github:carbonyde/diamond",
     "hydrogen": "github:carbonyde/hydrogen#1.1.0",
     "tailwindcss-animate": "^1.0.7"
   }
