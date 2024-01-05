@@ -1,7 +1,4 @@
-import path from "node:path";
 import { Script } from "carbon/script.tsx";
-
-const dirname = new URL(".", import.meta.url).pathname;
 
 export function ThemeToggle() {
   return (
@@ -15,7 +12,7 @@ export function ThemeToggle() {
         </span>
       </button>
 
-      <Script src={path.join(dirname, "toggle.script.ts")} />
+      <Script url={import.meta.url} src="./toggle.script.ts" />
     </>
   );
 }

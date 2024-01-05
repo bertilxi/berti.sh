@@ -21,7 +21,7 @@ export function Html({ children, title, description, keywords }: Properties) {
       }
       keywords={
         keywords ??
-        "codigo,software,programacion,ingenieria,html,css,typescript,node,esm,js,javascript"
+        "código,software,programación,ingeniería,html,css,typescript,node,esm,js,javascript"
       }
       url="https://berti.sh"
       image="/static/og.jpg"

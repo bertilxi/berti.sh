@@ -8,8 +8,10 @@ export default function HomePage() {
       <Navbar />
 
       <main class="container max-w-[800px] space-y-6 py-6 text-xl">
-        <h1 class="text-4xl font-bold">
-          Hola 👋 soy Fernando Berti, me dicen Berti.
+        <h1 class="text-4xl font-bold leading-normal">
+          Hola 👋 soy Fernando Berti,
+          <br />
+          me dicen Berti.
         </h1>
 
         <div>

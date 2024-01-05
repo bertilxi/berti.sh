@@ -1,37 +1,13 @@
-import { readdir } from "node:fs/promises";
 import path from "node:path";
 import { Footer } from "~/components/footer.tsx";
 import { Html } from "~/components/html.tsx";
 import { Navbar } from "~/components/navbar.tsx";
+import { getPosts } from "carbon/content.ts";
 import dayjs from "dayjs";
 import { root } from "hydrogen/util.ts";
 
 const contentPath = path.join(root, "pages", "blog");
-const postEntries = await readdir(contentPath, {
-  recursive: true,
-  withFileTypes: true,
-}).then((entries) =>
-  entries
-    .filter((entry) => !entry.isDirectory())
-    .filter((entry) => !entry.name.startsWith("_")),
-);
-
-const posts = (await Promise.all(
-  postEntries.map((entry) =>
-    import(path.join(entry.path, entry.name)).then((m) => ({
-      ...m.config,
-      path: entry.path.replace(contentPath, ""),
-      name: entry.name,
-    })),
-  ),
-)) as {
-  name: string;
-  path: string;
-  title?: string;
-  description?: string;
-  keywords?: string;
-  publishedAt?: string;
-}[];
+const posts = await getPosts(contentPath);
 
 export default function BlogPage() {
   return (
