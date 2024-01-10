@@ -14,4 +14,4 @@ ENV NODE_ENV="production"
 
 EXPOSE 8080
 
-CMD npx tsx main.ts
+CMD node --import tsx main.ts

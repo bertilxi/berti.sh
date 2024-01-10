@@ -27,6 +27,9 @@ export function Html({ children, title, description, keywords }: Properties) {
       image="/static/og.jpg"
     >
       {children}
+
+      <meta name="htmx-config" content='{"globalViewTransitions":true}' />
+      <script src="https://unpkg.com/htmx.org@1.9.10" />
     </Base>
   );
 }
