@@ -17,13 +17,8 @@ interface Properties {
   publishedAt?: string;
 }
 
-export async function BlogLayout({
-  children,
-  title,
-  description,
-  keywords,
-}: Properties) {
-  const { name } = useHtmlContext();
+export async function BlogLayout({ children }: Properties) {
+  const { name, title, description, keywords } = useHtmlContext();
   const post = await getPost(contentPath, name);
 
   return (

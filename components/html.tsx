@@ -1,3 +1,4 @@
+import { useHtmlContext } from "carbon/context";
 import { Html as Base } from "carbon/html.tsx";
 import type { Child } from "hono/jsx";
 
@@ -9,7 +10,9 @@ interface Properties {
   publishedAt?: string;
 }
 
-export function Html({ children, title, description, keywords }: Properties) {
+export function Html({ children }: Properties) {
+  const { title, description, keywords } = useHtmlContext();
+
   return (
     <Base
       lang="es"
