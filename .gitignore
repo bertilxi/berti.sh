@@ -7,6 +7,7 @@ node_modules
 # Temp folder
 tmp
 dist
+static/*.css
 
 # Binaries for programs and plugins
 *.exe

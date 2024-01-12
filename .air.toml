@@ -3,7 +3,7 @@ tmp_dir = "tmp"
 
 [build]
 bin = "./tmp/main"
-cmd = "templ generate && npm run css:dev && go build -o ./tmp/main main.go"
+cmd = "make air"
 delay = 1000
 exclude_dir = ["static", "tmp", "vendor"]
 exclude_file = []

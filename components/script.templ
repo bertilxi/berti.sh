@@ -1,7 +1,7 @@
 package components
 
-import "main/template"
+import "main/util"
 
 templ Script(source string, variables map[string]string) {
-	@templ.Raw("<script>" + template.Build([]string{source}, variables) + "</script>")
+	@templ.Raw("<script async type='module'>" + util.Build([]string{source}, variables) + "</script>")
 }

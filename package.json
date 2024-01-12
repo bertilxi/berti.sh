@@ -1,8 +1,4 @@
 {
-  "scripts": {
-    "css": "tailwindcss -i styles.css -o ./static/styles.css -m",
-    "css:dev": "tailwindcss -i styles.css -o ./static/styles.css"
-  },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.10",
     "lucide-static": "^0.309.0",

@@ -1,5 +1,9 @@
 package components
 
+import (
+	"main/util"
+)
+
 templ Html(lang string, title string, description string, url string, component templ.Component) {
 	<!DOCTYPE html>
 	<html class="dark" lang={ lang }>
@@ -26,6 +30,9 @@ templ Html(lang string, title string, description string, url string, component 
 			@component
 			<script src="https://unpkg.com/htmx.org@1.9.10"></script>
 			@templ.Raw("<script>htmx.config.globalViewTransitions = true</script>")
+			if util.Env.Watch {
+				@Script("./scripts/hot-reload.js", map[string]string{})
+			}
 		</body>
 	</html>
 }
