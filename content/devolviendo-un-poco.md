@@ -1,13 +1,10 @@
-import { BlogLayout } from "~/components/blog-layout.tsx";
-
-export const config = {
-  layout: BlogLayout,
-  title: "Devolviendo un poco a la comunidad.",
-  description:
-    "Les cuento la razón para empezar este blog y que es lo que se viene.",
-  keywords: "personal,comunidad,agradecimiento",
-  publishedAt: "2023-12-29",
-};
+---
+title: Devolviendo un poco a la comunidad.
+description: Les cuento la razón para empezar este blog y que es lo que se viene.
+tags: []
+keywords: [personal, comunidad, agradecimiento]
+publishedAt: 2023-12-29
+---
 
 # Devolviendo un poco a la comunidad
 

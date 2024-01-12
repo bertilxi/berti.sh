@@ -9,7 +9,7 @@ primary_region = "eze"
 [build]
 
 [http_service]
-internal_port = 8080
+internal_port = 8043
 force_https = true
 auto_stop_machines = true
 auto_start_machines = true
@@ -19,4 +19,4 @@ processes = ["app"]
 [[vm]]
 cpu_kind = "shared"
 cpus = 1
-memory_mb = 512
+memory_mb = 256

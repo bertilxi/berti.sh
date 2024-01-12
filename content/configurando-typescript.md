@@ -1,13 +1,10 @@
-import { BlogLayout } from "~/components/blog-layout.tsx";
-
-export const config = {
-  layout: BlogLayout,
-  title: "Como configurar Typescript rápido y fácil",
-  description:
-    "La forma mas rápido y fácil de configurar Typescript como un experto",
-  keywords: "typescript,tsconfig,rápido,fácil",
-  publishedAt: "2024-01-10",
-};
+---
+title: Como configurar Typescript rápido y fácil.
+description: La forma mas rápido y fácil de configurar Typescript como un experto.
+tags: []
+keywords: [typescript, tsconfig, rápido, fácil]
+publishedAt: 2024-01-10
+---
 
 # Como configurar Typescript rápido y fácil
 

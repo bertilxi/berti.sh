@@ -1,0 +1,7 @@
+package components
+
+import "main/template"
+
+templ Script(source string, variables map[string]string) {
+	@templ.Raw("<script>" + template.Build([]string{source}, variables) + "</script>")
+}

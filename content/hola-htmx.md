@@ -1,25 +1,22 @@
-import { BlogLayout } from "~/components/blog-layout.tsx";
+---
+title: Tu primera aplicación htmx.
+description: Vamos a explorar cómo crear una aplicación hypermedia moderna con htmx.
+tags: []
+keywords: [hypermedia, html, css, htmx]
+publishedAt: 2024-01-03
+---
 
-export const config = {
-  layout: BlogLayout,
-  title: "Tu primera aplicación htmx.",
-  description:
-    "Vamos a explorar cómo crear una aplicación hypermedia moderna con htmx.",
-  keywords: "hypermedia,html,css,htmx",
-  publishedAt: "2024-01-03",
-};
-
-# Tu primera aplicación htmx.
+# Tu primera aplicación htmx
 
 [Continuando con lo anticipado](/blog/devolviendo-un-poco), aquí el primer articulo.
 
 **TLDR:** Les dejo el repo [bertilxi/hola-htmx](https://github.com/bertilxi/hola-htmx)
 
-## El rey.
+## El rey
 
 Si has desarrollado por el tiempo suficiente, sabrás que la librería que domina el espacio es `React`. Tanto si usas `create-react-app`, `vite` o `next js`, es el standard defacto de hoy en dia, lo cual tiene sus pro y sus contras.
 
-## Hola htmx.
+## Hola htmx
 
 Hoy les vengo a ofrecer una alternativa, algo que cambia prácticamente todo lo de uno esta acostumbrado en una SPA, y algo que es muy familiar si programaste alguna vez PHP o Ruby.
 
@@ -33,7 +30,7 @@ Nos vamos a quedar con un par de ideas si, vamos a usar JSX para la vista, que s
 
 Sobretodo, simplicidad. Aquí solo hay un servidor (en este caso node js), que va a mandar el html + css + js suficiente para tener una aplicación web interactiva.
 
-### Empezamos.
+### Empezamos
 
 Primero inicializamos un proyecto con npm e instalamos un par de dependencias.
 
@@ -65,7 +62,7 @@ console.log("🚀 http://localhost:3000");
 
 Configuramos Typescript para que funcione con `tsx` y `hono`.
 
-```jsonc {10,11} title="tsconfig.json"
+```json {10,11} title="tsconfig.json"
 {
   "compilerOptions": {
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
@@ -157,7 +154,7 @@ app.get("/", (c) => {
       </div>
 
       <div id="todo" />
-    </Html>,
+    </Html>
   );
 });
 ```
@@ -177,7 +174,7 @@ app.post("/todo", async (c) => {
     <p hx-delete={`/todo/${todo.id}`} hx-swap="outerHTML">
       {todo.name}
       <button>borrar</button>
-    </p>,
+    </p>
   );
 });
 ```

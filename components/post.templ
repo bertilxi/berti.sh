@@ -1,0 +1,36 @@
+package components
+
+import "main/template"
+
+templ Post(content string, prev template.Post, next template.Post) {
+	@Navbar()
+	<main class="container prose prose-zinc max-w-[800px] py-6 dark:prose-invert">
+		@templ.Raw(content)
+		<div class="flex flex-wrap gap-2 pt-6 md:flex-nowrap">
+			if len(prev.Title) > 0 {
+				<a
+					href={ templ.URL("/blog/" + prev.Name) }
+					class="flex w-full flex-col rounded-xl border p-3 no-underline hover:border-rose-500 md:w-1/2"
+				>
+					<span class="text-sm">Articulo Anterior</span>
+					<span class="font-bold text-rose-600 dark:text-rose-400">
+						{ prev.Title }
+					</span>
+				</a>
+			}
+			<div class="flex-1"></div>
+			if len(next.Title) > 0 {
+				<a
+					href={ templ.URL("/blog/" + next.Name) }
+					class="flex w-full flex-col rounded-xl border p-3 text-right no-underline hover:border-rose-500 md:w-1/2"
+				>
+					<span class="text-sm">Siguiente articulo</span>
+					<span class="font-bold text-rose-600 dark:text-rose-400">
+						{ next.Title }
+					</span>
+				</a>
+			}
+		</div>
+	</main>
+	@Footer()
+}

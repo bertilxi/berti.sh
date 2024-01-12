@@ -1,0 +1,9 @@
+package components
+
+import (
+	"main/template"
+)
+
+templ Icon(name string, class string) {
+	@templ.Raw(template.LucideIcon(name, class))
+}

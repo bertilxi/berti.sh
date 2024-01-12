@@ -1,0 +1,33 @@
+package pages
+
+import (
+	"main/components"
+)
+
+templ IndexPage() {
+	@components.Navbar()
+	<main class="container max-w-[800px] space-y-6 py-6 text-xl">
+		<h1 class="text-4xl font-bold leading-normal">
+			Hola 👋 soy Fernando Berti,
+			<br/>
+			me dicen Berti.
+		</h1>
+		<div>
+			Me encanta construir productos digitales con mis propias manos y
+			disfruto mucho de programar.
+		</div>
+		<div>
+			Tengo algo asi como 8 años de experiencia creando sitios web,
+			servidores y todo lo que hay en el medio.
+		</div>
+		<div>
+			Soy curioso, me gusta explorar, aprender y poner al límite las nuevas
+			tecnologías.
+		</div>
+		<div class="font-bold">
+			La idea de este sitio es poder devolver a la comunidad un poco de todo
+			lo que me han dado y enseñado.
+		</div>
+	</main>
+	@components.Footer()
+}
