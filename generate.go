@@ -2,10 +2,13 @@ package main
 
 import (
 	"main/lib"
+	"main/view"
+
+	"github.com/carbonyde/tungsten"
 )
 
 func main() {
-	go lib.StartServer()
+	go tungsten.StartServer(view.App)
 
 	lib.Generate()
 }

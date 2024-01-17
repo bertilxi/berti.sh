@@ -1,9 +1,9 @@
 package components
 
 import (
-	"main/template"
+	"github.com/carbonyde/tungsten"
 )
 
 templ Icon(name string, class string) {
-	@templ.Raw(template.LucideIcon(name, class))
+	@templ.Raw(tungsten.LucideIcon(name, class))
 }

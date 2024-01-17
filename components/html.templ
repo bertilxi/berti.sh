@@ -1,10 +1,10 @@
 package components
 
 import (
-	"main/util"
+	"github.com/carbonyde/tungsten"
 )
 
-templ Html(lang string, title string, description string, url string, component templ.Component) {
+templ Html(lang string, title string, description string, url string) {
 	<!DOCTYPE html>
 	<html class="dark" lang={ lang }>
 		<head>
@@ -27,10 +27,10 @@ templ Html(lang string, title string, description string, url string, component 
 			@Script("./scripts/color-scheme.js", map[string]string{})
 		</head>
 		<body hx-boost="true">
-			@component
+			{ children... }
 			<script src="https://unpkg.com/htmx.org@1.9.10"></script>
 			@templ.Raw("<script>htmx.config.globalViewTransitions = true</script>")
-			if util.Env.Watch {
+			if tungsten.Env.Watch {
 				@Script("./scripts/hot-reload.js", map[string]string{})
 			}
 		</body>

@@ -21,7 +21,7 @@ air:
 	go build -o ./tmp/main main.go
 	clear
 
-watch:
+dev:
 	WATCH=true air
 
 generate:
@@ -35,16 +35,13 @@ prepare:
 	cp -rf ./static/* ./dist/static
 
 css:
-	tailwindcss -i styles.css -o ./static/styles.css -m
+	npx tailwindcss -i styles.css -o ./static/styles.css -m
 
 css_dev:
-	tailwindcss -i styles.css -o ./static/styles.css
+	npx tailwindcss -i styles.css -o ./static/styles.css
 
 templ:
 	templ generate
-
-templ_dev:
-	templ generate --watch --proxy="http://localhost:8080"
 
 clean:
 	rm -rf **/*_templ.go dist/

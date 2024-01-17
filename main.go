@@ -1,7 +1,11 @@
 package main
 
-import "main/lib"
+import (
+	"main/view"
+
+	"github.com/carbonyde/tungsten"
+)
 
 func main() {
-	lib.StartServer()
+	tungsten.StartServer(view.App)
 }

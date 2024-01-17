@@ -148,13 +148,3 @@ a {
   word-wrap: break-word;
   hyphens: auto;
 }
-
-.prose > h1 > a:before,
-.prose > h2 > a:before,
-.prose > h3 > a:before,
-.prose > h4 > a:before,
-.prose > h5 > a:before,
-.prose > h6 > a:before {
-  @apply invisible absolute -ml-8 hover:visible;
-  content: "#";
-}

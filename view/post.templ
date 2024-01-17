@@ -1,0 +1,81 @@
+package view
+
+import (
+	"os"
+	"path/filepath"
+	"github.com/carbonyde/tungsten"
+	"main/components"
+	"github.com/labstack/echo/v4"
+)
+
+func init() {
+	App.AddPage(&tungsten.Page{
+		Route:     "/blog/:slug",
+		Component: handler,
+	})
+}
+
+func handler(c echo.Context) templ.Component {
+	pwd, err := os.Getwd()
+	if err != nil {
+		panic(err)
+	}
+
+	slug := c.Param("slug")
+	posts := tungsten.GetPosts(c.Path())
+	post, err := os.ReadFile(filepath.Join(pwd, "content", slug+".md"))
+
+	if err != nil {
+		panic(err)
+	}
+
+	meta, result, err := tungsten.ConvertMarkdown(post)
+
+	if err != nil {
+		panic(err)
+	}
+
+	var fullPost tungsten.FullPost
+	for _, value := range posts {
+		if value.Title == meta.Title {
+			fullPost = value
+		}
+	}
+
+	return postPage(meta, result, fullPost.Prev, fullPost.Next)
+}
+
+templ postPage(meta tungsten.Frontmatter,content string, prev tungsten.Post, next tungsten.Post) {
+	@components.Html("es", meta.Title+" | Fernando Berti", meta.Description+" | Mis ideas sobre programación y tecnología", "https://berti.sh") {
+		@components.Navbar()
+		<main class="container prose prose-zinc max-w-[800px] py-6 dark:prose-invert">
+			@templ.Raw(content)
+			<div class="flex flex-wrap gap-2 pt-6 md:flex-nowrap">
+				if len(prev.Title) > 0 {
+					<a
+						href={ templ.URL("/blog/" + prev.Name) }
+						class="flex w-full flex-col rounded-xl border p-3 no-underline hover:border-rose-500 md:w-1/2"
+					>
+						<span class="text-sm">Articulo Anterior</span>
+						<span class="font-bold text-rose-600 dark:text-rose-400">
+							{ prev.Title }
+						</span>
+					</a>
+				}
+				<div class="flex-1"></div>
+				if len(next.Title) > 0 {
+					<a
+						href={ templ.URL("/blog/" + next.Name) }
+						class="flex w-full flex-col rounded-xl border p-3 text-right no-underline hover:border-rose-500 md:w-1/2"
+					>
+						<span class="text-sm">Siguiente articulo</span>
+						<span class="font-bold text-rose-600 dark:text-rose-400">
+							{ next.Title }
+						</span>
+					</a>
+				}
+			</div>
+		</main>
+		@components.Footer()
+	}
+}

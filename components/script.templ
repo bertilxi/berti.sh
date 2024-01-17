@@ -1,7 +1,7 @@
 package components
 
-import "main/util"
+import "github.com/carbonyde/tungsten"
 
 templ Script(source string, variables map[string]string) {
-	@templ.Raw("<script async type='module'>" + util.Build([]string{source}, variables) + "</script>")
+	@templ.Raw("<script async type='module'>" + tungsten.Build([]string{source}, variables) + "</script>")
 }
