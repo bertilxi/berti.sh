@@ -1,7 +1,0 @@
-package components
-
-import "github.com/carbonyde/tungsten"
-
-templ Script(source string, variables map[string]string) {
-	@templ.Raw("<script async type='module'>" + tungsten.Build([]string{source}, variables) + "</script>")
-}

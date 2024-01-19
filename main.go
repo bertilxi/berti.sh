@@ -1,11 +1,11 @@
 package main
 
 import (
-	"main/view"
+	_ "main/view"
 
 	"github.com/carbonyde/tungsten"
 )
 
 func main() {
-	tungsten.StartServer(view.App)
+	tungsten.Start(tungsten.Config{})
 }

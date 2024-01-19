@@ -9,8 +9,8 @@ import (
 )
 
 func init() {
-	App.AddPage(&tungsten.Page{
-		Route:     "/blog/:slug",
+	tungsten.AddPage(tungsten.Page{
+		Path:      "/blog/:slug",
 		Component: handler,
 	})
 }
@@ -46,7 +46,7 @@ func handler(c echo.Context) templ.Component {
 }
 
 templ postPage(meta tungsten.Frontmatter,content string, prev tungsten.Post, next tungsten.Post) {
-	@components.Html("es", meta.Title+" | Fernando Berti", meta.Description+" | Mis ideas sobre programación y tecnología", "https://berti.sh") {
+	@components.Html() {
 		@components.Navbar()
 		<main class="container prose prose-zinc max-w-[800px] py-6 dark:prose-invert">
 			@templ.Raw(content)

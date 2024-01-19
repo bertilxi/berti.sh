@@ -45,3 +45,7 @@ templ:
 
 clean:
 	rm -rf **/*_templ.go dist/
+
+fmt:
+	templ fmt .
+	go fmt .

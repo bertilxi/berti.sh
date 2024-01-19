@@ -7,14 +7,14 @@ import (
 )
 
 func init() {
-	App.AddPage(&tungsten.Page{
-		Route:     "/",
+	tungsten.AddPage(tungsten.Page{
+		Path:      "/",
 		Component: homePage,
 	})
 }
 
 templ homePage(c echo.Context) {
-	@components.Html("es", "Fernando Berti", "Comparto mis ideas sobre programación y tecnología", "https://berti.sh") {
+	@components.Html() {
 		@components.Navbar()
 		<main class="container max-w-[800px] space-y-6 py-6 text-xl">
 			<h1 class="text-4xl font-bold leading-normal">

@@ -4,17 +4,18 @@ import (
 	"main/components"
 	"github.com/labstack/echo/v4"
 	"github.com/carbonyde/tungsten"
+	"github.com/carbonyde/tungsten/ui"
 )
 
 func init() {
-	App.AddPage(&tungsten.Page{
-		Route:     "/blog",
+	tungsten.AddPage(tungsten.Page{
+		Path:      "/blog",
 		Component: blogPage,
 	})
 }
 
 templ blogPage(c echo.Context) {
-	@components.Html("es", "Fernando Berti", "Comparto mis ideas sobre programación y tecnología", "https://berti.sh") {
+	@components.Html() {
 		@components.Navbar()
 		<main class="container max-w-[800px] space-y-6 py-6">
 			<h1 class="text-3xl font-bold">Artículos</h1>
@@ -28,7 +29,7 @@ templ blogPage(c echo.Context) {
 								{ post.Title }
 							</span>
 							<span class="inline-flex items-center gap-1 text-zinc-500 dark:text-zinc-400">
-								@components.Icon("book-open-text", "h-5 w-5")
+								@ui.LucideIcon("book-open-text", "h-5 w-5")
 								{ tungsten.NumToString(post.ReadingTime) }
 								if post.ReadingTime == 1 {
 									Minuto
@@ -37,7 +38,7 @@ templ blogPage(c echo.Context) {
 								}
 							</span>
 							<span class="inline-flex items-center gap-1 text-zinc-500 dark:text-zinc-400">
-								@components.Icon("calendar-days", "h-5 w-5")
+								@ui.LucideIcon("calendar-days", "h-5 w-5")
 								{ tungsten.FormatDate(post.PublishedAt)  }
 							</span>
 						</div>

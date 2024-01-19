@@ -18,6 +18,8 @@ github.com/carbonyde/tungsten v0.0.0-20240115234409-897c59860d47 h1:1ZbPNQDhD5zi
 github.com/carbonyde/tungsten v0.0.0-20240115234409-897c59860d47/go.mod h1:HTyYMcmOIr1e2Bnqm6escfKGbN6CrM1M/i/fDGf75Wo=
 github.com/carbonyde/tungsten v0.0.0-20240116022437-2896e3e1902f h1:0FVt3IraLQpLT/iNUAHx48Hjz2Vq6n0ck9D4lMLhDnc=
 github.com/carbonyde/tungsten v0.0.0-20240116022437-2896e3e1902f/go.mod h1:jiBO3iBvIu4FGgece1YNo59k3GqNaLDLq9Hf5jyLP5Q=
+github.com/carbonyde/tungsten v0.0.0-20240119055307-2e45e00b38b8 h1:7kzeIt+jmROY9/iwsLPU0/sYf2huDl80vwzO+D2/hxQ=
+github.com/carbonyde/tungsten v0.0.0-20240119055307-2e45e00b38b8/go.mod h1:jiBO3iBvIu4FGgece1YNo59k3GqNaLDLq9Hf5jyLP5Q=
 github.com/cpuguy83/go-md2man/v2 v2.0.3/go.mod h1:tgQtvFlXSQOSOSIRvRPT7W67SCa46tRHOmNcaadrF8o=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=

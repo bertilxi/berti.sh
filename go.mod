@@ -18,7 +18,7 @@ require (
 
 require (
 	github.com/BurntSushi/toml v1.2.1 // indirect
-	github.com/carbonyde/tungsten v0.0.0-20240116022437-2896e3e1902f
+	github.com/carbonyde/tungsten v0.0.0-20240119055307-2e45e00b38b8
 	github.com/evanw/esbuild v0.19.11 // indirect
 	github.com/golang-jwt/jwt v3.2.2+incompatible // indirect
 	github.com/gorilla/websocket v1.5.1

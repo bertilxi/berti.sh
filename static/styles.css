@@ -1475,48 +1475,6 @@ a {
           hyphens: auto;
 }
 
-.prose>h1>a:before,
-.prose>h2>a:before,
-.prose>h3>a:before,
-.prose>h4>a:before,
-.prose>h5>a:before,
-.prose>h6>a:before {
-  visibility: hidden;
-  position: absolute;
-  margin-left: -2rem;
-}
-
-.prose>h1>a:hover:before,
-.prose>h2>a:hover:before,
-.prose>h3>a:hover:before,
-.prose>h4>a:hover:before,
-.prose>h5>a:hover:before,
-.prose>h6>a:hover:before {
-  visibility: visible;
-}
-
-.prose>h1>a:before,
-.prose>h2>a:before,
-.prose>h3>a:before,
-.prose>h4>a:before,
-.prose>h5>a:before,
-.prose>h6>a:before {
-  content: "#";
-}
-
-.prose :where(h1),
-.prose :where(h2),
-.prose :where(h3),
-.prose :where(h4),
-.prose :where(h5),
-.prose :where(h6) {
-  text-wrap: balance;
-}
-
-.prose :where(p) {
-  text-wrap: pretty;
-}
-
 :is(.dark .dark\:prose-invert) {
   --tw-prose-body: var(--tw-prose-invert-body);
   --tw-prose-headings: var(--tw-prose-invert-headings);

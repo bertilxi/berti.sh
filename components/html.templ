@@ -1,38 +1,18 @@
 package components
 
 import (
-	"github.com/carbonyde/tungsten"
+	"github.com/carbonyde/tungsten/ui"
 )
 
-templ Html(lang string, title string, description string, url string) {
-	<!DOCTYPE html>
-	<html class="dark" lang={ lang }>
-		<head>
-			<meta charset="UTF-8"/>
-			<link rel="icon" href="/static/fav.ico" sizes="any"/>
-			<link rel="icon" href="/static/fav.svg" type="image/svg+xml"/>
-			<link rel="manifest" href="/static/app.webmanifest"/>
-			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-			<title>{ title }</title>
-			<meta name="title" content={ title }/>
-			<meta name="description" content={ description }/>
-			// {keywords && <meta name="keywords" content={keywords} />}
-			<meta property="og:type" content="website"/>
-			<meta property="og:url" content={ url }/>
-			<meta property="og:title" content={ title }/>
-			<meta property="og:description" content={ description }/>
-			// {image && <meta property="og:image" content={image} />}
-			// {color && <meta name="theme-color" content={color} />}
-			<link rel="stylesheet" href="/static/styles.css"/>
-			@Script("./scripts/color-scheme.js", map[string]string{})
-		</head>
-		<body hx-boost="true">
-			{ children... }
-			<script src="https://unpkg.com/htmx.org@1.9.10"></script>
-			@templ.Raw("<script>htmx.config.globalViewTransitions = true</script>")
-			if tungsten.Env.Watch {
-				@Script("./scripts/hot-reload.js", map[string]string{})
-			}
-		</body>
-	</html>
+var class = "dark hidden text-xl"
+
+templ Html() {
+	@ui.Html(ui.HtmlProps {
+		Lang: "es",
+		Title: "Fernando Berti",
+		Description: "Comparto mis ideas sobre programación y tecnología",
+		Url: "https://berti.sh",
+	}) {
+		{ children... }
+	}
 }
