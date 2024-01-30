@@ -1,9 +1,8 @@
 ---
-title: Por qué usar go on 2024?
-description: Empezamos el año con un nuevo lenguaje, les cuento por qué.
-tags: []
-keywords: [go, web, backend]
-publishedAt: 2024-01-17
+title: "Por qué usar go on 2024?"
+description: "Empezamos el año con un nuevo lenguaje, les cuento por qué."
+tags: [go, web, backend]
+pubDate: 2024-01-17
 ---
 
 # ¿Por qué usar Go en 2024?

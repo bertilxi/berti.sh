@@ -1,9 +1,8 @@
 ---
-title: Tu primera aplicación htmx.
-description: Vamos a explorar cómo crear una aplicación hypermedia moderna con htmx.
-tags: []
-keywords: [hypermedia, html, css, htmx]
-publishedAt: 2024-01-03
+title: "Tu primera aplicación htmx."
+description: "Vamos a explorar cómo crear una aplicación hypermedia moderna con htmx."
+tags: [hypermedia, html, css, htmx]
+pubDate: 2024-01-03
 ---
 
 # Tu primera aplicación htmx

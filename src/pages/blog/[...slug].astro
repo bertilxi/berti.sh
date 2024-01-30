@@ -1,0 +1,61 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/post.astro";
+import dayjs from "dayjs";
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection("posts");
+
+  return blogEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+const posts = (await getCollection("posts")).sort((a, b) =>
+  dayjs(b.data.pubDate).diff(a.data.pubDate)
+);
+const currentIndex = posts.findIndex((post) => post.id === entry.id);
+const prev = posts[currentIndex + 1];
+const next = posts[currentIndex - 1];
+---
+
+<Layout frontmatter={entry.data}>
+  <Content />
+
+  <div class="flex flex-wrap gap-2 pt-6 md:flex-nowrap">
+    {
+      prev?.id && (
+        <a
+          href={"/blog/" + prev.slug}
+          class="flex w-full flex-col rounded-xl border p-3 no-underline hover:border-rose-500 md:w-1/2"
+        >
+          <span class="text-sm">Articulo Anterior</span>
+          <span class="font-bold text-rose-600 dark:text-rose-400">
+            {prev.data.title}
+          </span>
+        </a>
+      )
+    }
+
+    <div class="flex-1"></div>
+
+    {
+      next?.id && (
+        <a
+          href={"/blog/" + next.slug}
+          class="flex w-full flex-col rounded-xl border p-3 text-right no-underline hover:border-rose-500 md:w-1/2"
+        >
+          <span class="text-sm">Siguiente articulo</span>
+          <span class="font-bold text-rose-600 dark:text-rose-400">
+            {next.data.title}
+          </span>
+        </a>
+      )
+    }
+  </div>
+</Layout>

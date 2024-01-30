@@ -1,9 +1,8 @@
 ---
-title: Devolviendo un poco a la comunidad.
-description: Les cuento la razón para empezar este blog y que es lo que se viene.
-tags: []
-keywords: [personal, comunidad, agradecimiento]
-publishedAt: 2023-12-29
+title: "Devolviendo un poco a la comunidad."
+description: "Les cuento la razón para empezar este blog y que es lo que se viene."
+tags: [personal, comunidad, agradecimiento]
+pubDate: 2023-12-29
 ---
 
 # Devolviendo un poco a la comunidad

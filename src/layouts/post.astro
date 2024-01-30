@@ -1,0 +1,19 @@
+---
+import BaseLayout from "./base.astro";
+import Navbar from "../components/navbar.astro";
+import Footer from "../components/footer.astro";
+
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout
+  title={frontmatter.title}
+  description={frontmatter.description}
+  keywords={frontmatter.tags}
+>
+  <Navbar />
+  <main class="container prose prose-zinc max-w-[800px] py-6 dark:prose-invert">
+    <slot />
+  </main>
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,11 @@
+---
+import lucide from "lucide-static";
+
+const { name, class: className } = Astro.props;
+
+const icons = (lucide as any)[name] as string;
+
+const icon = icons.replace('class="', `class="${className} `);
+---
+
+<i set:html={icon} />
