@@ -1,0 +1,7 @@
+---
+import clsx from "clsx";
+---
+
+<a class={clsx("hover:underline", Astro.props.class)} {...Astro.props}>
+    <slot />
+</a>

@@ -1,8 +1,16 @@
 ---
-import Welcome from "../components/Welcome.astro";
+import Navbar from "../components/navbar.astro";
 import Layout from "../layouts/Layout.astro";
+
+export const prerender = true;
 ---
 
 <Layout>
-    <!--  -->
+    <main
+        class="flex flex-col mx-auto max-w-screen-md h-screen space-y-8 justify-center"
+    >
+        <h1 class="text-5xl md:text-9xl font-bold text-center">Berti</h1>
+
+        <Navbar />
+    </main>
 </Layout>

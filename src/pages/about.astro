@@ -1,0 +1,46 @@
+---
+import Link from "../components/link.astro";
+import Navbar from "../components/navbar.astro";
+import Layout from "../layouts/Layout.astro";
+import { Linkedin, Twitter, Github, Mail } from "lucide-astro";
+
+export const prerender = true;
+---
+
+<Layout>
+    <main
+        class="flex flex-col mx-auto max-w-screen-md h-screen space-y-8 mt-10"
+    >
+        <h1 class="text-5xl md:text-9xl font-bold text-center">About</h1>
+
+        <Navbar />
+
+        <p class="text-xl pt-10">I build stuff using code</p>
+
+        <div class="flex gap-2 text-lg md:text-xl">
+            You can find me here
+            <Link
+                href="https://www.linkedin.com/in/berti-tech"
+                target="_hblank"
+                class="hover:text-blue-500 p-2"
+            >
+                <Linkedin class="size-4" />
+            </Link>
+            <Link
+                href="https://x.com/berti_15"
+                target="_hblank"
+                class="hover:text-blue-500 p-2"><Twitter class="size-4" /></Link
+            >
+            <Link
+                href="https://github.com/bertilxi"
+                target="_hblank"
+                class="hover:text-blue-500 p-2"><Github class="size-4" /></Link
+            >
+            <Link
+                href="mailto:contact+about@berti.sh"
+                target="_hblank"
+                class="hover:text-blue-500 p-2"><Mail class="size-4" /></Link
+            >
+        </div>
+    </main>
+</Layout>

@@ -1,0 +1,68 @@
+---
+import Link from "../components/link.astro";
+import Navbar from "../components/navbar.astro";
+import Layout from "../layouts/Layout.astro";
+import { Github } from "lucide-astro";
+
+export const prerender = true;
+
+const projects = [
+    {
+        name: "NewsHub",
+        link: "https://newshub.fly.dev",
+        description: "RSS agregator without ads, cookie banners, etc",
+        code: "https://github.com/3-lines-studio/newshub",
+    },
+    {
+        name: "Hooker",
+        link: "https://hooker.fly.dev",
+        description: "Webhook redirect mapper",
+        code: "https://github.com/blueprint-data/hooker",
+    },
+    {
+        name: "PlayNow",
+        link: "https://playnow.fly.dev",
+        description: "Best rated short games",
+        code: "https://github.com/blueprint-data/playnow",
+    },
+    {
+        name: "Picsel",
+        link: "https://www.picsel.app",
+        description: "Ecommerce for sports photographers",
+    },
+];
+---
+
+<Layout>
+    <main
+        class="flex flex-col mx-auto max-w-screen-md h-screen space-y-8 mt-10"
+    >
+        <h1 class="text-5xl md:text-9xl font-bold text-center">Projects</h1>
+
+        <Navbar />
+
+        <div class="flex flex-col gap-4 pt-10">
+            {
+                projects.map((project) => (
+                    <div class="text-xl">
+                        <div class="flex gap-1 items-center">
+                            <Link href={project.link} class="font-bold">
+                                {project.name}
+                            </Link>
+
+                            {project.code && (
+                                <Link
+                                    href={project.code}
+                                    class="hover:text-blue-500 p-1"
+                                >
+                                    <Github class="size-4" />
+                                </Link>
+                            )}
+                        </div>
+                        <p>{project.description}</p>
+                    </div>
+                ))
+            }
+        </div>
+    </main>
+</Layout>
